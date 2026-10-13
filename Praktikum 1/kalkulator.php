@@ -1,3 +1,4 @@
+
 <?php
 $hasil = null;
 $pesan = '';
@@ -17,48 +18,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         case '*':
             $hasil = $a * $b;
             break;
-           case '/':
+        case '/':
             if ($b == 0) {
-                $pesan = '
-Pembagian dengan nol tidak diperbolehkan.';
+                $pesan = 'Pembagian dengan nol tidak diperbolehkan.';
             } else {
                 $hasil = $a / $b;
             }
             break;
         default:
-        $pesan = 'Operator tidak valid.';
+            $pesan = 'Operator tidak valid.';
     }
 }
 ?>
 
 <!doctype html>
 <html lang="id">
-
 <head>
     <meta charset="utf-8">
     <title>Kalkulator</title>
 </head>
-
 <body>
     <h1>Kalkulator Sederhana</h1>
     <form method="post">
-        <input type="number" step="any" name="a"
-required>
+        <input type="number" step="any" name="a" required>
         <select name="operator">
             <option>+</option>
             <option>-</option>
             <option>*</option>
             <option>/</option>
         </select>
-        <input type="number" step="any" name="b"
-required>
+        <input type="number" step="any" name="b" required>
         <button type="submit">Hitung</button>
     </form>
+
     <?php if ($pesan): ?>
         <p><?= htmlspecialchars($pesan) ?></p>
     <?php elseif ($hasil !== null): ?>
-        <p>Hasil <?= htmlspecialchars((string)$hasil)
-?></p>
+        <p>Hasil <?= htmlspecialchars((string)$hasil) ?></p>
     <?php endif; ?>
 </body>
 </html>
