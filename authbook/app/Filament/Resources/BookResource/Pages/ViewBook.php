@@ -29,32 +29,38 @@ class ViewBook extends ViewRecord
                         Infolists\Components\ImageEntry::make('cover')
                             ->height(200)
                             ->defaultImageUrl(url('/images/default-book-cover.png')),
-                        
+
                         Infolists\Components\TextEntry::make('isbn')
                             ->label('ISBN')
                             ->copyable(),
-                        
+
                         Infolists\Components\TextEntry::make('title')
                             ->size(Infolists\Components\TextEntry\TextEntrySize::Large)
                             ->weight('bold'),
-                        
+
+                        Infolists\Components\TextEntry::make('description')
+                            ->label('Description')
+                            ->placeholder('No description')
+                            ->columnSpanFull(),
+
                         Infolists\Components\TextEntry::make('author.name')
                             ->label('Author'),
-                        
+
                         Infolists\Components\TextEntry::make('publisher'),
-                        
+
                         Infolists\Components\TextEntry::make('year'),
-                        
+
                         Infolists\Components\TextEntry::make('status')
                             ->badge()
                             ->color(fn (string $state): string => match ($state) {
                                 'available' => 'success',
                                 'borrowed' => 'warning',
+                                default => 'gray',
                             }),
-                        
+
                         Infolists\Components\TextEntry::make('created_at')
                             ->dateTime(),
-                        
+
                         Infolists\Components\TextEntry::make('updated_at')
                             ->dateTime(),
                     ])
