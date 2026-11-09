@@ -22,7 +22,7 @@ Fitur yang terdapat pada sistem antara lain:
 ### 1.2 Entity Relationship Diagram (ERD)
 
 ERD berikut menggambarkan hubungan antar tabel pada sistem perpustakaan.
-![ERD Sistem Perpustakaan](authbook/erd_sistem_perpustakaan.png)
+![ERD Sistem Perpustakaan](authbook/erd_sistem_perpustakaan.jpg)
 
 ### 1.3 Relasi Antar Tabel
 
